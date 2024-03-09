@@ -6,7 +6,7 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 12:38:03 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/09 15:29:35 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/09 23:03:47 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ void sigint_handler(int signal, siginfo_t *s, void *c)
     }
 }
 
-int main()
+int main(int ac, char **av)
 {
     struct sigaction acct;
     pid_t   pid;
 
+    if(ac != 1)
+        return (1);
     acct.sa_sigaction = &sigint_handler;
     acct.sa_flags = 0;
     acct.sa_mask = 0;

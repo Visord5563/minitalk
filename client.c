@@ -6,7 +6,7 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:00:32 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/08 16:32:38 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/09 22:56:42 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,38 @@ int main(int ac, char **av)
     int b = 0;
     if (ac != 3)
         return (1);
-    int server_pid = atoi(av[1]);// 00000001
+    while (av[1][i])
+    {
+        if (av[1][i] < 48 || av[1][i] > 58)
+        {
+            printf("iiiii\n");
+            exit(0);   
+        }
+        i++;
+    }
+    i = 0;
+    int server_pid = atoi(av[1]);
     while (av[2][i])
     {
         j = 0;
         while(j < 8)
         {
             if ((av[2][i] & (1 << j)) != 0)
-                kill(server_pid, SIGUSR1);
+            {
+                if (kill(server_pid, SIGUSR1) == -1)
+                {
+                    printf("hhhhhhh\n");
+                    exit(0);
+                }
+            }
             else
-                kill(server_pid, SIGUSR2);
+            {
+                if (kill(server_pid, SIGUSR2) == -1)
+                {
+                    printf("hhhhhhh\n");     
+                    exit(0);
+                }
+            }
             j++;
             usleep(500);
         }
