@@ -6,7 +6,7 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 12:38:03 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/10 21:47:31 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/13 01:39:43 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ int main(int ac, char **av)
     if(ac != 1)
         return (1);
     acct.sa_sigaction = &sigint_handler;
-    // acct.sa_flags = 0;
-    // acct.sa_mask = 0;
+    acct.sa_flags = 0;
     pid = getpid();
     printf("%d\n", pid);
     sigaction(SIGUSR1, &acct, NULL);
