@@ -6,16 +6,11 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:40:23 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/13 02:08:08 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:34:05 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
-#include <signal.h>
-#include <stdio.h>
+#include "header_manda.h"
 typedef struct hhhhhhh{
     char p[4];
     int i;
@@ -23,7 +18,7 @@ typedef struct hhhhhhh{
     pid_t    pid;
     unsigned char  current_char;
     int    bit_index;
-}ss;
+} ss;
 
 static ss o;
 
@@ -34,7 +29,7 @@ void handelunicode(ss o)
     else if (224 <= o.current_char && o.current_char <= 239)
         o.b = 3;
     else if (240 <= o.current_char && o.current_char <= 244)
-        o.b =4;
+        o.b = 4;
     o.p[o.i++] = o.current_char;
     if (o.i == o.b)
     {
@@ -77,13 +72,14 @@ int main(int ac, char **av)
 {
     struct sigaction acct;
     pid_t   pid;
-
+    
+    (void)av;
     if(ac != 1)
         return (1);
     acct.sa_sigaction = &sigint_handler;
     acct.sa_flags = 0;
     pid = getpid();
-    printf("%d\n", pid);
+    ft_printf("%d\n", pid);
     sigaction(SIGUSR1, &acct, NULL);
     sigaction(SIGUSR2, &acct, NULL);
     while(true)

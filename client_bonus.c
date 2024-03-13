@@ -6,43 +6,30 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:40:01 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/13 00:23:34 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:43:04 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <signal.h>
-#include <stdio.h>
+#include "header_manda.h"
 
 void sighandler(int signal)
 {
   if (signal == SIGUSR2)
-  {
-        printf("finish\n");
-  }
+        ft_printf("finish\n");
 }
 
-int main(int ac, char **av)
+void ft_error()
 {
-    signal(SIGUSR2, sighandler);
-    int i = 0;
+    ft_printf("hhhhhhh\n");
+    exit(0);
+}
+
+void kkkkk(char **av, int server_pid)
+{
+    int i;
     int j;
-    int b = 0;
-    if (ac != 3)
-        return (1);
-    while (av[1][i])
-    {
-        if (av[1][i] < 48 || av[1][i] > 58)
-        {
-            printf("iiiii\n");
-            exit(0);   
-        }
-        i++;
-    }
+    
     i = 0;
-    int server_pid = atoi(av[1]);
     while (av[2][i])
     {
         j = 0;
@@ -51,23 +38,36 @@ int main(int ac, char **av)
             if ((av[2][i] & (1 << j)) != 0)
             {
                 if (kill(server_pid, SIGUSR1) == -1)
-                {
-                    printf("hhhhhhh\n");
-                    exit(0);
-                }
+                    ft_error();
             }
             else
             {
                 if (kill(server_pid, SIGUSR2) == -1)
-                {
-                    printf("hhhhhhh\n");     
-                    exit(0);
-                }
+                    ft_error();
             }
             j++;
             usleep(500);
         }
         i++;
     }
+}
+
+int main(int ac, char **av)
+{
+    signal(SIGUSR2, sighandler);
+    int i = 0;
+    if (ac != 3)
+        return (1);
+    while (av[1][i])
+    {
+        if (av[1][i] < 48 || av[1][i] > 58)
+        {
+            ft_printf("iiiii\n");
+            exit(0);   
+        }
+        i++;
+    }
+    int server_pid = atoi(av[1]);
+    kkkkk(av, server_pid);
     return (0);
 }
