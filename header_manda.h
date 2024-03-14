@@ -6,7 +6,7 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:30:01 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/14 00:39:38 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:05:02 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@
 # include <stdlib.h>
 # include <string.h>
 
-typedef struct hhhhhhh{
-    char p[4];
-    int i;
-    int b;
-    pid_t    pid;
-    unsigned char  current_char;
-    int    bit_index;
-} t_ss;
+typedef struct hhhhhhh
+{
+	char			p[4];
+	int				i;
+	int				b;
+	pid_t			pid;
+	unsigned char	current_char;
+	int				bit_index;
+}	t_ss;
 
 int		ft_printf(const char *format, ...);
 
