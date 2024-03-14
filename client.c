@@ -6,11 +6,11 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:00:32 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/14 01:23:19 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:40:28 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header_manda.h"
+#include "header.h"
 
 void	ft_error(void)
 {

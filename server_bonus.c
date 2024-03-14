@@ -6,11 +6,25 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:40:23 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/14 01:08:38 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:44:38 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header_manda.h"
+#include "header.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*t;
+	size_t			i;
+
+	t = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		t[i] = (unsigned char)0;
+		i++;
+	}
+}
 
 void	o_init(t_ss *o)
 {

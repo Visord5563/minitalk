@@ -6,11 +6,11 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:40:01 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/14 01:26:40 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:44:31 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header_manda.h"
+#include "header.h"
 
 void	sighandler(int signal)
 {

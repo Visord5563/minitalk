@@ -6,11 +6,11 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 03:15:07 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/13 17:32:25 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/14 01:40:33 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header_manda.h"
+#include "header.h"
 
 void	ft_putchar(char c, int *i)
 {
