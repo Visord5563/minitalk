@@ -6,7 +6,7 @@
 #    By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/13 16:03:54 by saharchi          #+#    #+#              #
-#    Updated: 2024/03/14 01:41:43 by saharchi         ###   ########.fr        #
+#    Updated: 2024/03/16 02:53:41 by saharchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAMEB = server_bonus
 NAMEB1 = client_bonus
 
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=
+CFLAGS = -Wall -Wextra -Werror 
 RM = rm -f
 
 SRCM = server.c ft_printf.c

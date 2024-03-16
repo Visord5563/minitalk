@@ -6,7 +6,7 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:00:32 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/14 01:40:28 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/16 18:05:35 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_error(void)
 {
-	ft_printf("hhhhhhh\n");
+	ft_printf("no such process\n");
 	exit(0);
 }
 
-void	kkkkk(char **av, int server_pid)
+void	sendsignal(char **av, int server_pid)
 {
 	int	i;
 	int	j;
@@ -59,12 +59,12 @@ int	main(int ac, char **av)
 	{
 		if (av[1][i] < 48 || av[1][i] > 58)
 		{
-			ft_printf("eroor\n");
+			ft_printf("illegal pid: %s\n", av[1]);
 			exit(0);
 		}
 		i++;
 	}
 	server_pid = atoi(av[1]);
-	kkkkk(av, server_pid);
+	sendsignal(av, server_pid);
 	return (0);
 }

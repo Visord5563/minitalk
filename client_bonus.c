@@ -6,7 +6,7 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:40:01 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/14 01:44:31 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/16 22:23:25 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,32 @@
 void	sighandler(int signal)
 {
 	if (signal == SIGUSR2)
-		ft_printf("finish\n");
+		ft_printf("Finish sending the message\n");
 }
 
 void	ft_error(void)
 {
-	ft_printf("hhhhhhh\n");
+	ft_printf("no such process\n");
 	exit(0);
 }
 
-void	kkkkk(char **av, int server_pid)
+size_t	ft_strlen(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+void	sendsignal(char **av, int server_pid)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (av[2][i])
+	while (i < (int)ft_strlen(av[2]) + 1)
 	{
 		j = 0;
 		while (j < 8)
@@ -66,12 +76,12 @@ int	main(int ac, char **av)
 	{
 		if (av[1][i] < 48 || av[1][i] > 58)
 		{
-			ft_printf("iiiii\n");
+			ft_printf("illegal pid: %s\n", av[1]);
 			exit(0);
 		}
 		i++;
 	}
 	server_pid = atoi(av[1]);
-	kkkkk(av, server_pid);
+	sendsignal(av, server_pid);
 	return (0);
 }

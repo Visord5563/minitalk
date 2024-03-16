@@ -6,7 +6,7 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:30:01 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/14 01:42:06 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/16 17:07:52 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,12 @@
 # include <stdlib.h>
 # include <string.h>
 
-typedef struct hhhhhhh
+typedef struct struct_unicode
 {
 	char			p[4];
 	int				i;
 	int				b;
-	pid_t			pid;
-	unsigned char	current_char;
-	int				bit_index;
-}	t_ss;
+}	t_unicode;
 
 int		ft_printf(const char *format, ...);
 
