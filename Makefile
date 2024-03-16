@@ -6,7 +6,7 @@
 #    By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/13 16:03:54 by saharchi          #+#    #+#              #
-#    Updated: 2024/03/16 22:40:35 by saharchi         ###   ########.fr        #
+#    Updated: 2024/03/16 22:48:11 by saharchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = server
 NAME1 = client
 NAMEB = server_bonus
 NAMEB1 = client_bonus
-
 
 CFLAGS = -Wall -Wextra -Werror 
 RM = rm -f
