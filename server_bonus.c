@@ -6,11 +6,11 @@
 /*   By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:40:23 by saharchi          #+#    #+#             */
-/*   Updated: 2024/03/16 22:10:34 by saharchi         ###   ########.fr       */
+/*   Updated: 2024/03/16 22:41:00 by saharchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "header_bonus.h"
 
 void	ft_bzero(void *s, size_t n)
 {

@@ -6,7 +6,7 @@
 #    By: saharchi <saharchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/13 16:03:54 by saharchi          #+#    #+#              #
-#    Updated: 2024/03/16 02:53:41 by saharchi         ###   ########.fr        #
+#    Updated: 2024/03/16 22:40:35 by saharchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,10 +37,10 @@ OBJB1 = $(SRCB1:%.c=%.o)
 
 all : $(NAME) $(NAME1)
 
-$(NAMEB) : $(OBJB) header.h
+$(NAMEB) : $(OBJB) header_bonus.h
 		cc $(CFLAGS) $(OBJB) -o $(NAMEB)
 
-$(NAMEB1) : $(OBJB1) header.h
+$(NAMEB1) : $(OBJB1) header_bonus.h
 		cc $(CFLAGS) $(OBJB1) -o $(NAMEB1)
 		
 bonus : $(NAMEB) $(NAMEB1)
